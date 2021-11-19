@@ -1,4 +1,5 @@
 import * as React from "react"
+import { graphql } from 'gatsby'
 
 // styles
 const pageStyles = {
@@ -180,5 +181,17 @@ const IndexPage = () => {
     </main>
   )
 }
+
+export const query = graphql`
+{
+  allSitePage {
+    nodes {
+      fields {
+        exampleField
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
